@@ -6,11 +6,15 @@ namespace PetrolStation
 {
     public partial class FuelStationForm : Form
     {
+        byte _litres = 0;
+        double _money = 0;
+
         public FuelStationForm()
         {
             InitializeComponent();
             PetrolType.Text = "Аи-95";
             ByLitres.Checked = true;
+
         }
         Dictionary<string, double> PetrolPrice = new Dictionary<string, double>()
         {
@@ -32,13 +36,20 @@ namespace PetrolStation
                     PriceTypeOfPetrol.Text = Convert.ToString(PetrolPrice[item]); break;
                 }
             }
+            if (ByLitres.Checked)
+            SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
+            if (ByMoney.Checked)
+            {
+                buyLitres.Text = Convert.ToString(Math.Round(_money / Convert.ToDouble(PriceTypeOfPetrol.Text), 2));
+                SumForPetrol.Text = Convert.ToString(_money);
+            }
         }
 
         private void ByLitres_CheckedChanged(object sender, EventArgs e)
         {
             buyLitres.Enabled = true;
             buyLitres.Clear();
-            //buyMoney.Clear(); 
+            SumForPetrol.Clear(); 
             buyMoney.Enabled = false;
         }
 
@@ -46,12 +57,13 @@ namespace PetrolStation
         {
             buyMoney.Enabled = true;
             buyMoney.Clear();
+            SumForPetrol.Clear(); 
             buyLitres.Enabled = false;
         }
 
         private void buyLitres_TextChanged(object sender, EventArgs e)
         {
-            byte _litres = 0; 
+            
             if (buyLitres.Text != ""&& ByLitres.Checked)
             {
                 try
@@ -70,7 +82,7 @@ namespace PetrolStation
 
         private void buyMoney_TextChanged(object sender, EventArgs e)
         {
-            double _money = 0; 
+             
             if (buyMoney.Text != "")
             {
                 try
