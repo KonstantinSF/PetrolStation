@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuelStationForm));
-            this.PetrolGroup = new System.Windows.Forms.GroupBox();
+            this.PetrolGroupBox = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buyMoney = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,33 +45,54 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SumForPetrol = new System.Windows.Forms.TextBox();
-            this.PetrolGroup.SuspendLayout();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cafeGroupBox = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.SumCafe = new System.Windows.Forms.TextBox();
+            this.hotDogCheck = new System.Windows.Forms.CheckBox();
+            this.priceHotDog = new System.Windows.Forms.TextBox();
+            this.hotDogNum = new System.Windows.Forms.TextBox();
+            this.hamburgerNum = new System.Windows.Forms.TextBox();
+            this.hamburgerPrice = new System.Windows.Forms.TextBox();
+            this.hamburgerCheck = new System.Windows.Forms.CheckBox();
+            this.potatoNum = new System.Windows.Forms.TextBox();
+            this.potatoPrice = new System.Windows.Forms.TextBox();
+            this.potatoCheck = new System.Windows.Forms.CheckBox();
+            this.colaNum = new System.Windows.Forms.TextBox();
+            this.colaPrice = new System.Windows.Forms.TextBox();
+            this.colaCheck = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PetrolGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.cafeGroupBox.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PetrolGroup
+            // PetrolGroupBox
             // 
-            this.PetrolGroup.BackColor = System.Drawing.SystemColors.Control;
-            this.PetrolGroup.Controls.Add(this.label5);
-            this.PetrolGroup.Controls.Add(this.buyMoney);
-            this.PetrolGroup.Controls.Add(this.label4);
-            this.PetrolGroup.Controls.Add(this.buyLitres);
-            this.PetrolGroup.Controls.Add(this.label3);
-            this.PetrolGroup.Controls.Add(this.ByMoney);
-            this.PetrolGroup.Controls.Add(this.ByLitres);
-            this.PetrolGroup.Controls.Add(this.PriceTypeOfPetrol);
-            this.PetrolGroup.Controls.Add(this.label2);
-            this.PetrolGroup.Controls.Add(this.label1);
-            this.PetrolGroup.Controls.Add(this.PetrolType);
-            this.PetrolGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PetrolGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PetrolGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PetrolGroup.Location = new System.Drawing.Point(0, 0);
-            this.PetrolGroup.Name = "PetrolGroup";
-            this.PetrolGroup.Size = new System.Drawing.Size(372, 449);
-            this.PetrolGroup.TabIndex = 1;
-            this.PetrolGroup.TabStop = false;
-            this.PetrolGroup.Text = "PetrolControl";
+            this.PetrolGroupBox.BackColor = System.Drawing.SystemColors.Control;
+            this.PetrolGroupBox.Controls.Add(this.label5);
+            this.PetrolGroupBox.Controls.Add(this.buyMoney);
+            this.PetrolGroupBox.Controls.Add(this.label4);
+            this.PetrolGroupBox.Controls.Add(this.buyLitres);
+            this.PetrolGroupBox.Controls.Add(this.label3);
+            this.PetrolGroupBox.Controls.Add(this.ByMoney);
+            this.PetrolGroupBox.Controls.Add(this.ByLitres);
+            this.PetrolGroupBox.Controls.Add(this.PriceTypeOfPetrol);
+            this.PetrolGroupBox.Controls.Add(this.label2);
+            this.PetrolGroupBox.Controls.Add(this.label1);
+            this.PetrolGroupBox.Controls.Add(this.PetrolType);
+            this.PetrolGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PetrolGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PetrolGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.PetrolGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.PetrolGroupBox.Name = "PetrolGroupBox";
+            this.PetrolGroupBox.Size = new System.Drawing.Size(372, 449);
+            this.PetrolGroupBox.TabIndex = 1;
+            this.PetrolGroupBox.TabStop = false;
+            this.PetrolGroupBox.Text = "PetrolControl";
             // 
             // label5
             // 
@@ -86,10 +108,12 @@
             // buyMoney
             // 
             this.buyMoney.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buyMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buyMoney.Location = new System.Drawing.Point(171, 224);
             this.buyMoney.Name = "buyMoney";
             this.buyMoney.Size = new System.Drawing.Size(115, 30);
             this.buyMoney.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.buyMoney, "Input sum of money from customer");
             this.buyMoney.TextChanged += new System.EventHandler(this.buyMoney_TextChanged);
             // 
             // label4
@@ -106,10 +130,12 @@
             // buyLitres
             // 
             this.buyLitres.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.buyLitres.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buyLitres.Location = new System.Drawing.Point(171, 176);
             this.buyLitres.Name = "buyLitres";
             this.buyLitres.Size = new System.Drawing.Size(115, 30);
             this.buyLitres.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.buyLitres, "Input ordered litres");
             this.buyLitres.TextChanged += new System.EventHandler(this.buyLitres_TextChanged);
             // 
             // label3
@@ -134,6 +160,7 @@
             this.ByMoney.TabIndex = 7;
             this.ByMoney.TabStop = true;
             this.ByMoney.Text = "Money";
+            this.toolTip1.SetToolTip(this.ByMoney, "Choose if the client pay definetly sum");
             this.ByMoney.UseVisualStyleBackColor = true;
             this.ByMoney.CheckedChanged += new System.EventHandler(this.ByMoney_CheckedChanged);
             // 
@@ -148,6 +175,7 @@
             this.ByLitres.TabIndex = 6;
             this.ByLitres.TabStop = true;
             this.ByLitres.Text = "Litres";
+            this.toolTip1.SetToolTip(this.ByLitres, "Choose if client pay for litres");
             this.ByLitres.UseVisualStyleBackColor = true;
             this.ByLitres.CheckedChanged += new System.EventHandler(this.ByLitres_CheckedChanged);
             // 
@@ -230,11 +258,229 @@
             // 
             this.SumForPetrol.BackColor = System.Drawing.SystemColors.Control;
             this.SumForPetrol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SumForPetrol.Enabled = false;
             this.SumForPetrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SumForPetrol.Location = new System.Drawing.Point(143, 63);
             this.SumForPetrol.Name = "SumForPetrol";
             this.SumForPetrol.Size = new System.Drawing.Size(100, 38);
             this.SumForPetrol.TabIndex = 0;
+            // 
+            // cafeGroupBox
+            // 
+            this.cafeGroupBox.Controls.Add(this.groupBox3);
+            this.cafeGroupBox.Controls.Add(this.label9);
+            this.cafeGroupBox.Controls.Add(this.label8);
+            this.cafeGroupBox.Controls.Add(this.colaNum);
+            this.cafeGroupBox.Controls.Add(this.colaPrice);
+            this.cafeGroupBox.Controls.Add(this.colaCheck);
+            this.cafeGroupBox.Controls.Add(this.potatoNum);
+            this.cafeGroupBox.Controls.Add(this.potatoPrice);
+            this.cafeGroupBox.Controls.Add(this.potatoCheck);
+            this.cafeGroupBox.Controls.Add(this.hamburgerNum);
+            this.cafeGroupBox.Controls.Add(this.hamburgerPrice);
+            this.cafeGroupBox.Controls.Add(this.hamburgerCheck);
+            this.cafeGroupBox.Controls.Add(this.hotDogNum);
+            this.cafeGroupBox.Controls.Add(this.priceHotDog);
+            this.cafeGroupBox.Controls.Add(this.hotDogCheck);
+            this.cafeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cafeGroupBox.Location = new System.Drawing.Point(379, 0);
+            this.cafeGroupBox.Name = "cafeGroupBox";
+            this.cafeGroupBox.Size = new System.Drawing.Size(380, 449);
+            this.cafeGroupBox.TabIndex = 14;
+            this.cafeGroupBox.TabStop = false;
+            this.cafeGroupBox.Text = "Mini Cafe";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.SumCafe);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox3.Location = new System.Drawing.Point(23, 290);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(328, 141);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Price for Food";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(274, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 18);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Rub";
+            // 
+            // SumCafe
+            // 
+            this.SumCafe.BackColor = System.Drawing.SystemColors.Control;
+            this.SumCafe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SumCafe.Enabled = false;
+            this.SumCafe.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SumCafe.Location = new System.Drawing.Point(143, 63);
+            this.SumCafe.Name = "SumCafe";
+            this.SumCafe.Size = new System.Drawing.Size(100, 38);
+            this.SumCafe.TabIndex = 0;
+            // 
+            // hotDogCheck
+            // 
+            this.hotDogCheck.AutoSize = true;
+            this.hotDogCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hotDogCheck.Location = new System.Drawing.Point(23, 60);
+            this.hotDogCheck.Name = "hotDogCheck";
+            this.hotDogCheck.Size = new System.Drawing.Size(86, 21);
+            this.hotDogCheck.TabIndex = 15;
+            this.hotDogCheck.Text = "Hot Dog";
+            this.hotDogCheck.UseVisualStyleBackColor = true;
+            this.hotDogCheck.CheckedChanged += new System.EventHandler(this.hotDogCheck_CheckedChanged);
+            // 
+            // priceHotDog
+            // 
+            this.priceHotDog.Enabled = false;
+            this.priceHotDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceHotDog.Location = new System.Drawing.Point(142, 55);
+            this.priceHotDog.Name = "priceHotDog";
+            this.priceHotDog.ReadOnly = true;
+            this.priceHotDog.Size = new System.Drawing.Size(100, 26);
+            this.priceHotDog.TabIndex = 16;
+            this.priceHotDog.Text = "250";
+            // 
+            // hotDogNum
+            // 
+            this.hotDogNum.Enabled = false;
+            this.hotDogNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hotDogNum.Location = new System.Drawing.Point(261, 55);
+            this.hotDogNum.Name = "hotDogNum";
+            this.hotDogNum.Size = new System.Drawing.Size(100, 26);
+            this.hotDogNum.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.hotDogNum, "No more then 5 in one hand");
+            this.hotDogNum.TextChanged += new System.EventHandler(this.hotDogNum_TextChanged);
+            // 
+            // hamburgerNum
+            // 
+            this.hamburgerNum.Enabled = false;
+            this.hamburgerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hamburgerNum.Location = new System.Drawing.Point(261, 111);
+            this.hamburgerNum.Name = "hamburgerNum";
+            this.hamburgerNum.Size = new System.Drawing.Size(100, 26);
+            this.hamburgerNum.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.hamburgerNum, "No more then 5 in one hand");
+            this.hamburgerNum.TextChanged += new System.EventHandler(this.hamburgerNum_TextChanged);
+            // 
+            // hamburgerPrice
+            // 
+            this.hamburgerPrice.Enabled = false;
+            this.hamburgerPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hamburgerPrice.Location = new System.Drawing.Point(142, 111);
+            this.hamburgerPrice.Name = "hamburgerPrice";
+            this.hamburgerPrice.ReadOnly = true;
+            this.hamburgerPrice.Size = new System.Drawing.Size(100, 26);
+            this.hamburgerPrice.TabIndex = 19;
+            this.hamburgerPrice.Text = "200";
+            // 
+            // hamburgerCheck
+            // 
+            this.hamburgerCheck.AutoSize = true;
+            this.hamburgerCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hamburgerCheck.Location = new System.Drawing.Point(23, 111);
+            this.hamburgerCheck.Name = "hamburgerCheck";
+            this.hamburgerCheck.Size = new System.Drawing.Size(107, 21);
+            this.hamburgerCheck.TabIndex = 18;
+            this.hamburgerCheck.Text = "Hamburger";
+            this.hamburgerCheck.UseVisualStyleBackColor = true;
+            this.hamburgerCheck.CheckedChanged += new System.EventHandler(this.hamburgerCheck_CheckedChanged);
+            // 
+            // potatoNum
+            // 
+            this.potatoNum.Enabled = false;
+            this.potatoNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potatoNum.Location = new System.Drawing.Point(261, 163);
+            this.potatoNum.Name = "potatoNum";
+            this.potatoNum.Size = new System.Drawing.Size(100, 26);
+            this.potatoNum.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.potatoNum, "No more then 5 in one hand");
+            this.potatoNum.TextChanged += new System.EventHandler(this.potatoNum_TextChanged);
+            // 
+            // potatoPrice
+            // 
+            this.potatoPrice.Enabled = false;
+            this.potatoPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potatoPrice.Location = new System.Drawing.Point(142, 163);
+            this.potatoPrice.Name = "potatoPrice";
+            this.potatoPrice.ReadOnly = true;
+            this.potatoPrice.Size = new System.Drawing.Size(100, 26);
+            this.potatoPrice.TabIndex = 22;
+            this.potatoPrice.Text = "160";
+            // 
+            // potatoCheck
+            // 
+            this.potatoCheck.AutoSize = true;
+            this.potatoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potatoCheck.Location = new System.Drawing.Point(23, 163);
+            this.potatoCheck.Name = "potatoCheck";
+            this.potatoCheck.Size = new System.Drawing.Size(124, 21);
+            this.potatoCheck.TabIndex = 21;
+            this.potatoCheck.Text = "Potato (fried)";
+            this.potatoCheck.UseVisualStyleBackColor = true;
+            this.potatoCheck.CheckedChanged += new System.EventHandler(this.potatoCheck_CheckedChanged);
+            // 
+            // colaNum
+            // 
+            this.colaNum.Enabled = false;
+            this.colaNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colaNum.Location = new System.Drawing.Point(261, 211);
+            this.colaNum.Name = "colaNum";
+            this.colaNum.Size = new System.Drawing.Size(100, 26);
+            this.colaNum.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.colaNum, "No more then 5 in one hand");
+            this.colaNum.TextChanged += new System.EventHandler(this.colaNum_TextChanged);
+            // 
+            // colaPrice
+            // 
+            this.colaPrice.Enabled = false;
+            this.colaPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colaPrice.Location = new System.Drawing.Point(142, 211);
+            this.colaPrice.Name = "colaPrice";
+            this.colaPrice.ReadOnly = true;
+            this.colaPrice.Size = new System.Drawing.Size(100, 26);
+            this.colaPrice.TabIndex = 25;
+            this.colaPrice.Text = "150";
+            // 
+            // colaCheck
+            // 
+            this.colaCheck.AutoSize = true;
+            this.colaCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colaCheck.Location = new System.Drawing.Point(23, 211);
+            this.colaCheck.Name = "colaCheck";
+            this.colaCheck.Size = new System.Drawing.Size(101, 21);
+            this.colaCheck.TabIndex = 24;
+            this.colaCheck.Text = "Coca-Cola";
+            this.colaCheck.UseVisualStyleBackColor = true;
+            this.colaCheck.CheckedChanged += new System.EventHandler(this.colaCheck_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(139, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 18);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Price, Rub";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(264, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 18);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "Quantity, pc";
             // 
             // FuelStationForm
             // 
@@ -242,20 +488,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 607);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.PetrolGroup);
+            this.Controls.Add(this.PetrolGroupBox);
+            this.Controls.Add(this.cafeGroupBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FuelStationForm";
             this.Text = "FuelStation";
-            this.PetrolGroup.ResumeLayout(false);
-            this.PetrolGroup.PerformLayout();
+            this.PetrolGroupBox.ResumeLayout(false);
+            this.PetrolGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.cafeGroupBox.ResumeLayout(false);
+            this.cafeGroupBox.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox PetrolGroup;
+        private System.Windows.Forms.GroupBox PetrolGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox PetrolType;
         private System.Windows.Forms.Label label2;
@@ -270,6 +521,25 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox SumForPetrol;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox cafeGroupBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox SumCafe;
+        private System.Windows.Forms.TextBox colaNum;
+        private System.Windows.Forms.TextBox colaPrice;
+        private System.Windows.Forms.CheckBox colaCheck;
+        private System.Windows.Forms.TextBox potatoNum;
+        private System.Windows.Forms.TextBox potatoPrice;
+        private System.Windows.Forms.CheckBox potatoCheck;
+        private System.Windows.Forms.TextBox hamburgerNum;
+        private System.Windows.Forms.TextBox hamburgerPrice;
+        private System.Windows.Forms.CheckBox hamburgerCheck;
+        private System.Windows.Forms.TextBox hotDogNum;
+        private System.Windows.Forms.TextBox priceHotDog;
+        private System.Windows.Forms.CheckBox hotDogCheck;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
 
