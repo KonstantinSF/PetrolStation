@@ -268,7 +268,7 @@
             // hotDogNum
             // 
             this.hotDogNum.Enabled = false;
-            this.hotDogNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hotDogNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.hotDogNum.Location = new System.Drawing.Point(261, 55);
             this.hotDogNum.Name = "hotDogNum";
             this.hotDogNum.Size = new System.Drawing.Size(100, 26);
@@ -281,7 +281,7 @@
             // hamburgerNum
             // 
             this.hamburgerNum.Enabled = false;
-            this.hamburgerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hamburgerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.hamburgerNum.Location = new System.Drawing.Point(261, 111);
             this.hamburgerNum.Name = "hamburgerNum";
             this.hamburgerNum.Size = new System.Drawing.Size(100, 26);
@@ -294,7 +294,7 @@
             // potatoNum
             // 
             this.potatoNum.Enabled = false;
-            this.potatoNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potatoNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.potatoNum.Location = new System.Drawing.Point(261, 163);
             this.potatoNum.Name = "potatoNum";
             this.potatoNum.Size = new System.Drawing.Size(100, 26);
@@ -307,7 +307,7 @@
             // colaNum
             // 
             this.colaNum.Enabled = false;
-            this.colaNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colaNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.colaNum.Location = new System.Drawing.Point(261, 211);
             this.colaNum.Name = "colaNum";
             this.colaNum.Size = new System.Drawing.Size(100, 26);

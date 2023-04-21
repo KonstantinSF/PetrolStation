@@ -77,11 +77,13 @@ namespace PetrolStation
                 catch (Exception)
                 {
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    buyLitres.Clear();
+                    _litres = 0; 
                 }
             }
             if (_litres < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             //if (_litres > 0 && _litres < 5) MessageBox.Show("We don't fill less then 5 litres!", "Minimal Limit", MessageBoxButtons.OK, MessageBoxIcon.Stop); 
-            SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
+            else SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
         }
 
         private void buyMoney_TextChanged(object sender, EventArgs e)
@@ -96,6 +98,7 @@ namespace PetrolStation
                 catch (Exception)
                 {
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    buyMoney.Clear(); 
                 }
             }
             if (_money < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
