@@ -8,13 +8,17 @@ namespace PetrolStation
     {
         byte _litres = 0;
         double _money = 0;
+        double _sumCafe=0;
+        bool _countEnter = true; 
 
         public FuelStationForm()
         {
             InitializeComponent();
             PetrolType.Text = "Аи-95";
             ByLitres.Checked = true;
-
+            SumForPetrol.Text = _money.ToString();
+            SumCafe.Text = _sumCafe.ToString();
+             
         }
         Dictionary<string, double> PetrolPrice = new Dictionary<string, double>()
         {
@@ -102,48 +106,78 @@ namespace PetrolStation
 
         private void hotDogCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (hotDogCheck.Checked) hotDogNum.Enabled = true;
+            if (hotDogCheck.Checked) { 
+            hotDogNum.Enabled = true;
+                hotDogNum.Focus() ;
+            } 
+            
             else
             {
                 hotDogNum.Enabled = false;
+                if (hotDogNum.Text != "")
+                {
+                    _sumCafe -= Convert.ToDouble(hotDogNum.Text) * Convert.ToDouble(hotDogPrice.Text);
+                }
                 hotDogNum.Clear();
             }
+            SumCafe.Text = _sumCafe.ToString();
         }
 
         private void hamburgerCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (hamburgerCheck.Checked) hamburgerNum.Enabled = true;
+            if (hamburgerCheck.Checked) { 
+                hamburgerNum.Enabled = true;
+                hamburgerNum.Focus();
+            }
             else
             {
                 hamburgerNum.Enabled = false;
+                if (hamburgerNum.Text != "")
+                {
+                    _sumCafe -= Convert.ToDouble(hamburgerNum.Text) * Convert.ToDouble(hamburgerPrice.Text);
+                }
                 hamburgerNum.Clear();
             }
+            SumCafe.Text = _sumCafe.ToString();
         }
 
         private void potatoCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (potatoCheck.Checked) potatoNum.Enabled = true;
+            if (potatoCheck.Checked) 
+            {
+            potatoNum.Enabled = true;
+            potatoNum.Focus();
+            }
             else
             {
                 potatoNum.Enabled = false;
+                if (potatoNum.Text != "")
+                {
+                    _sumCafe -= Convert.ToDouble(potatoNum.Text) * Convert.ToDouble(potatoPrice.Text);
+                }
                 potatoNum.Clear();
             }
+            SumCafe.Text = _sumCafe.ToString();
         }
 
         private void colaCheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (colaCheck.Checked) colaNum.Enabled = true;
+            if (colaCheck.Checked) 
+            {
+                colaNum.Enabled = true;
+                colaNum.Focus(); 
+            }
             else
             {
-                colaNum.Enabled = false;
+                if (colaNum.Text!="")
+                {
+                    _sumCafe -= Convert.ToDouble(colaNum.Text) * Convert.ToDouble(colaPrice.Text); 
+                }
                 colaNum.Clear();
+                colaNum.Enabled = false;
             }
+            SumCafe.Text = _sumCafe.ToString(); 
         }
-        //private void cafeGroupBoxTextBoxChanged(object sender, EventArgs e)
-        //{
-        //    //Controls.cafeGroupBox.OfType<TextBox>().Any(textBox => textBox.Text == ""); 
-
-        //}
 
         private void hotDogNum_TextChanged(object sender, EventArgs e)
         {
@@ -202,6 +236,7 @@ namespace PetrolStation
         private void colaNum_TextChanged(object sender, EventArgs e)
         {
             byte cola = 0;
+            
             if (colaNum.Text != "")
             {
                 try
@@ -214,6 +249,87 @@ namespace PetrolStation
                     colaNum.Clear();
                 }
                 if (cola < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+            }
+        }
+        private void colaNum_Leave(object sender, EventArgs e)
+        {
+            _countEnter = true;
+        }
+        private void colaNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13&& _countEnter==true)
+            {
+                double colaPricePart = 0;
+                if (colaNum.Text != "" && colaCheck.Checked)
+                {
+                    _countEnter=false;
+                    colaPricePart = Convert.ToSByte(colaNum.Text) * Convert.ToDouble(colaPrice.Text);
+                    _sumCafe += colaPricePart;
+                    colaNum.Enabled = false;
+                }
+                SumCafe.Text = _sumCafe.ToString();
+            }
+        }
+
+        private void potatoNum_Leave(object sender, EventArgs e)
+        {
+            _countEnter = true;
+        }
+        private void potatoNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13 && _countEnter == true)
+            {
+                double potatoPricePart = 0;
+                if (potatoNum.Text != "" && potatoCheck.Checked)
+                {
+                    _countEnter = false;
+                    potatoPricePart = Convert.ToSByte(potatoNum.Text) * Convert.ToDouble(potatoPrice.Text);
+                    _sumCafe += potatoPricePart;
+                    potatoNum.Enabled = false;
+                }
+                SumCafe.Text = _sumCafe.ToString();
+            }
+        }
+
+        private void hamburgerNum_Leave(object sender, EventArgs e)
+        {
+            _countEnter = true;
+        }
+
+        private void hamburgerNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13 && _countEnter == true)
+            {
+                double hamburgerPricePart = 0;
+                if (hamburgerNum.Text != "" && hamburgerCheck.Checked)
+                {
+                    _countEnter = false;
+                    hamburgerPricePart = Convert.ToSByte(hamburgerNum.Text) * Convert.ToDouble(hamburgerPrice.Text);
+                    _sumCafe += hamburgerPricePart;
+                    hamburgerNum.Enabled = false;
+                }
+                SumCafe.Text = _sumCafe.ToString();
+            }
+        }
+
+        private void hotDogNum_Leave(object sender, EventArgs e)
+        {
+            _countEnter = true;
+        }
+
+        private void hotDogNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13 && _countEnter == true)
+            {
+                double hotDogPricePart = 0;
+                if (hotDogNum.Text != "" && hotDogCheck.Checked)
+                {
+                    _countEnter = false;
+                    hotDogPricePart = Convert.ToSByte(hotDogNum.Text) * Convert.ToDouble(hotDogPrice.Text);
+                    _sumCafe += hotDogPricePart;
+                    hotDogNum.Enabled = false;
+                }
+                SumCafe.Text = _sumCafe.ToString();
             }
         }
     }
