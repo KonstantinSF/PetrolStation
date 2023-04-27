@@ -189,6 +189,7 @@
             this.PriceTypeOfPetrol.Name = "PriceTypeOfPetrol";
             this.PriceTypeOfPetrol.Size = new System.Drawing.Size(115, 30);
             this.PriceTypeOfPetrol.TabIndex = 5;
+            this.PriceTypeOfPetrol.TabStop = false;
             // 
             // label2
             // 
@@ -214,19 +215,21 @@
             // 
             // PetrolType
             // 
+            this.PetrolType.AllowDrop = true;
             this.PetrolType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PetrolType.FormattingEnabled = true;
             this.PetrolType.Items.AddRange(new object[] {
+            "Аи-100",
             "Аи-76",
             "Аи-92",
             "Аи-95",
-            "Аи-100",
-            "ДТ",
             "биоДТ",
+            "ДТ",
             "закись азота"});
             this.PetrolType.Location = new System.Drawing.Point(171, 29);
             this.PetrolType.Name = "PetrolType";
             this.PetrolType.Size = new System.Drawing.Size(194, 28);
+            this.PetrolType.Sorted = true;
             this.PetrolType.TabIndex = 2;
             this.PetrolType.Text = "Aи-76";
             this.PetrolType.SelectedIndexChanged += new System.EventHandler(this.PetrolType_SelectedIndexChanged);
@@ -264,6 +267,7 @@
             this.SumForPetrol.Name = "SumForPetrol";
             this.SumForPetrol.Size = new System.Drawing.Size(100, 38);
             this.SumForPetrol.TabIndex = 0;
+            this.SumForPetrol.TabStop = false;
             // 
             // hotDogNum
             // 
@@ -375,6 +379,7 @@
             this.SumCafe.Name = "SumCafe";
             this.SumCafe.Size = new System.Drawing.Size(100, 38);
             this.SumCafe.TabIndex = 0;
+            this.SumCafe.TabStop = false;
             // 
             // label9
             // 
@@ -407,6 +412,7 @@
             this.colaPrice.ReadOnly = true;
             this.colaPrice.Size = new System.Drawing.Size(100, 26);
             this.colaPrice.TabIndex = 25;
+            this.colaPrice.TabStop = false;
             this.colaPrice.Text = "150";
             // 
             // colaCheck
@@ -431,6 +437,7 @@
             this.potatoPrice.ReadOnly = true;
             this.potatoPrice.Size = new System.Drawing.Size(100, 26);
             this.potatoPrice.TabIndex = 22;
+            this.potatoPrice.TabStop = false;
             this.potatoPrice.Text = "160";
             // 
             // potatoCheck
@@ -455,6 +462,7 @@
             this.hamburgerPrice.ReadOnly = true;
             this.hamburgerPrice.Size = new System.Drawing.Size(100, 26);
             this.hamburgerPrice.TabIndex = 19;
+            this.hamburgerPrice.TabStop = false;
             this.hamburgerPrice.Text = "200";
             // 
             // hamburgerCheck
@@ -479,6 +487,7 @@
             this.hotDogPrice.ReadOnly = true;
             this.hotDogPrice.Size = new System.Drawing.Size(100, 26);
             this.hotDogPrice.TabIndex = 16;
+            this.hotDogPrice.TabStop = false;
             this.hotDogPrice.Text = "250";
             // 
             // hotDogCheck

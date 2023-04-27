@@ -67,7 +67,6 @@ namespace PetrolStation
 
         private void buyLitres_TextChanged(object sender, EventArgs e)
         {
-
             if (buyLitres.Text != "" && ByLitres.Checked)
             {
                 try
@@ -81,11 +80,8 @@ namespace PetrolStation
                     _litres = 0; 
                 }
             }
-            if (_litres < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
-            //if (_litres > 0 && _litres < 5) MessageBox.Show("We don't fill less then 5 litres!", "Minimal Limit", MessageBoxButtons.OK, MessageBoxIcon.Stop); 
             else SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
         }
-
         private void buyMoney_TextChanged(object sender, EventArgs e)
         {
 
@@ -110,10 +106,9 @@ namespace PetrolStation
         private void hotDogCheck_CheckedChanged(object sender, EventArgs e)
         {
             if (hotDogCheck.Checked) { 
-            hotDogNum.Enabled = true;
+                hotDogNum.Enabled = true;
                 hotDogNum.Focus() ;
             } 
-            
             else
             {
                 hotDogNum.Enabled = false;
@@ -123,7 +118,7 @@ namespace PetrolStation
                 }
                 hotDogNum.Clear();
             }
-            SumCafe.Text = _sumCafe.ToString();
+           SumCafe.Text = _sumCafe.ToString();
         }
 
         private void hamburgerCheck_CheckedChanged(object sender, EventArgs e)
@@ -196,7 +191,6 @@ namespace PetrolStation
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                     hotDogNum.Clear();
                 }
-                if (hotDog < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error); 
             }
         }
 
@@ -214,7 +208,6 @@ namespace PetrolStation
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                     hamburgerNum.Clear();
                 }
-                if (hamburger < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             }
         }
 
@@ -232,14 +225,12 @@ namespace PetrolStation
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                     potatoNum.Clear();
                 }
-                if (potato < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             }
         }
 
         private void colaNum_TextChanged(object sender, EventArgs e)
         {
             byte cola = 0;
-            
             if (colaNum.Text != "")
             {
                 try
@@ -251,13 +242,9 @@ namespace PetrolStation
                     MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
                     colaNum.Clear();
                 }
-                if (cola < 0) MessageBox.Show("Please enter a correct number", "Input Error!", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
             }
         }
-        private void colaNum_Leave(object sender, EventArgs e)
-        {
-            _countEnter = true;
-        }
+        private void colaNum_Leave(object sender, EventArgs e) => _countEnter = true;
         private void colaNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13&& _countEnter==true)
@@ -274,10 +261,7 @@ namespace PetrolStation
             }
         }
 
-        private void potatoNum_Leave(object sender, EventArgs e)
-        {
-            _countEnter = true;
-        }
+        private void potatoNum_Leave(object sender, EventArgs e)=> _countEnter = true;
         private void potatoNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13 && _countEnter == true)
@@ -294,10 +278,7 @@ namespace PetrolStation
             }
         }
 
-        private void hamburgerNum_Leave(object sender, EventArgs e)
-        {
-            _countEnter = true;
-        }
+        private void hamburgerNum_Leave(object sender, EventArgs e)=> _countEnter = true;
 
         private void hamburgerNum_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -315,11 +296,7 @@ namespace PetrolStation
             }
         }
 
-        private void hotDogNum_Leave(object sender, EventArgs e)
-        {
-            _countEnter = true;
-        }
-
+        private void hotDogNum_Leave(object sender, EventArgs e)=> _countEnter = true;
         private void hotDogNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13 && _countEnter == true)
