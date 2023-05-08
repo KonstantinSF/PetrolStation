@@ -340,6 +340,7 @@
             this.toolTip1.SetToolTip(this.colaCheck, "Click twice to clear the quantity");
             this.colaCheck.UseVisualStyleBackColor = true;
             this.colaCheck.CheckedChanged += new System.EventHandler(this.colaCheck_CheckedChanged);
+            this.colaCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colaCheck_KeyPress);
             // 
             // potatoCheck
             // 
@@ -353,6 +354,7 @@
             this.toolTip1.SetToolTip(this.potatoCheck, "Click twice to clear the quantity");
             this.potatoCheck.UseVisualStyleBackColor = true;
             this.potatoCheck.CheckedChanged += new System.EventHandler(this.potatoCheck_CheckedChanged);
+            this.potatoCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.potatoCheck_KeyPress);
             // 
             // hamburgerCheck
             // 
@@ -366,6 +368,7 @@
             this.toolTip1.SetToolTip(this.hamburgerCheck, "Click twice to clear the quantity");
             this.hamburgerCheck.UseVisualStyleBackColor = true;
             this.hamburgerCheck.CheckedChanged += new System.EventHandler(this.hamburgerCheck_CheckedChanged);
+            this.hamburgerCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hamburgerCheck_KeyPress);
             // 
             // hotDogCheck
             // 
@@ -379,6 +382,7 @@
             this.toolTip1.SetToolTip(this.hotDogCheck, "Click twice to clear the quantity");
             this.hotDogCheck.UseVisualStyleBackColor = true;
             this.hotDogCheck.CheckedChanged += new System.EventHandler(this.hotDogCheck_CheckedChanged);
+            this.hotDogCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotDogCheck_KeyPress);
             // 
             // cafeGroupBox
             // 

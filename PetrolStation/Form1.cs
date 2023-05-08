@@ -115,6 +115,11 @@ namespace PetrolStation
                 _sumCafe -= Convert.ToDouble(hotDogNum.Text) * Convert.ToDouble(hotDogPrice.Text);
                 hotDogNum.Clear();
             }
+            else if (!hotDogCheck.Checked && hotDogNum.Text != "")
+            {
+                hotDogNum.Clear();
+                hotDogNum.Enabled = false;
+            }
             SumCafe.Text = _sumCafe.ToString();
         }
 
@@ -129,6 +134,11 @@ namespace PetrolStation
             {
                  _sumCafe -= Convert.ToDouble(hamburgerNum.Text) * Convert.ToDouble(hamburgerPrice.Text);
                 hamburgerNum.Clear();
+            }
+            else if (!hamburgerCheck.Checked && hamburgerNum.Text != "")
+            {
+                hamburgerNum.Clear();
+                hamburgerNum.Enabled = false;
             }
             SumCafe.Text = _sumCafe.ToString();
         }
@@ -145,6 +155,11 @@ namespace PetrolStation
                  _sumCafe -= Convert.ToDouble(potatoNum.Text) * Convert.ToDouble(potatoPrice.Text);
                 potatoNum.Clear();
             }
+            else if (!potatoCheck.Checked && potatoNum.Text != "")
+            {
+                potatoNum.Clear();
+                potatoNum.Enabled = false;
+            }
             SumCafe.Text = _sumCafe.ToString();
         }
 
@@ -158,6 +173,11 @@ namespace PetrolStation
             else if (!colaNum.Enabled)
             {
                 _sumCafe -= Convert.ToDouble(colaNum.Text) * Convert.ToDouble(colaPrice.Text);
+                colaNum.Clear();
+                colaNum.Enabled = false;
+            }
+            else if (!colaCheck.Checked && colaNum.Text != "")
+            {
                 colaNum.Clear();
                 colaNum.Enabled = false;
             }
@@ -305,7 +325,11 @@ namespace PetrolStation
 
         private void countButton_Click(object sender, EventArgs e)
         {
-            totalSum.Text = (Convert.ToDouble(SumForPetrol.Text)+Convert.ToDouble(SumCafe.Text)).ToString();
+            if (!hotDogNum.Enabled && !hamburgerNum.Enabled && !potatoNum.Enabled && !colaNum.Enabled)
+            {
+                totalSum.Text = (Convert.ToDouble(SumForPetrol.Text) + Convert.ToDouble(SumCafe.Text)).ToString();
+            }
+            else MessageBox.Show("Please, fill the all lines in MiniCafe. Do NOT forget press Enter after each line!","Empty lines in MiniCafe", MessageBoxButtons.OK, icon: MessageBoxIcon.Error); 
         }
 
         private void buyLitres_KeyPress(object sender, KeyPressEventArgs e)
@@ -324,6 +348,26 @@ namespace PetrolStation
                 buyMoney.Enabled = false;
                 countButton.Focus();
             }
+        }
+
+        private void hotDogCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar == 13) hotDogCheck.Checked = true; 
+        }
+
+        private void hamburgerCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar == 13) hamburgerCheck.Checked = true; 
+        }
+
+        private void potatoCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar == 13) potatoCheck.Checked = true; 
+        }
+
+        private void colaCheck_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           if(e.KeyChar == 13) colaCheck.Checked = true; 
         }
     }
 }
