@@ -10,6 +10,7 @@ namespace PetrolStation
         double _money = 0;
         double _sumCafe = 0;
         bool _countEnter = true;
+        double _totalPerChange; 
 
         public FuelStationForm()
         {
@@ -18,7 +19,7 @@ namespace PetrolStation
             ByLitres.Checked = true;
             SumForPetrol.Text = _money.ToString();
             SumCafe.Text = _sumCafe.ToString();
-
+            totalPerCharge.Text = DataForm._total.ToString();
         }
         Dictionary<string, double> PetrolPrice = new Dictionary<string, double>()
         {
@@ -53,7 +54,7 @@ namespace PetrolStation
         {
             buyLitres.Enabled = true;
             buyLitres.Clear();
-            SumForPetrol.Text="0";
+            SumForPetrol.Text = "0";
             buyMoney.Enabled = false;
         }
 
@@ -61,7 +62,7 @@ namespace PetrolStation
         {
             buyMoney.Enabled = true;
             buyMoney.Clear();
-            SumForPetrol.Text="0";
+            SumForPetrol.Text = "0";
             buyLitres.Enabled = false;
         }
 
@@ -132,7 +133,7 @@ namespace PetrolStation
             }
             else if (!hamburgerNum.Enabled)
             {
-                 _sumCafe -= Convert.ToDouble(hamburgerNum.Text) * Convert.ToDouble(hamburgerPrice.Text);
+                _sumCafe -= Convert.ToDouble(hamburgerNum.Text) * Convert.ToDouble(hamburgerPrice.Text);
                 hamburgerNum.Clear();
             }
             else if (!hamburgerCheck.Checked && hamburgerNum.Text != "")
@@ -152,7 +153,7 @@ namespace PetrolStation
             }
             else if (!potatoNum.Enabled)
             {
-                 _sumCafe -= Convert.ToDouble(potatoNum.Text) * Convert.ToDouble(potatoPrice.Text);
+                _sumCafe -= Convert.ToDouble(potatoNum.Text) * Convert.ToDouble(potatoPrice.Text);
                 potatoNum.Clear();
             }
             else if (!potatoCheck.Checked && potatoNum.Text != "")
@@ -319,7 +320,7 @@ namespace PetrolStation
                     hotDogNum.Enabled = false;
                 }
                 SumCafe.Text = _sumCafe.ToString();
-                countButton.Focus(); 
+                countButton.Focus();
             }
         }
 
@@ -328,8 +329,9 @@ namespace PetrolStation
             if (!hotDogNum.Enabled && !hamburgerNum.Enabled && !potatoNum.Enabled && !colaNum.Enabled)
             {
                 totalSum.Text = (Convert.ToDouble(SumForPetrol.Text) + Convert.ToDouble(SumCafe.Text)).ToString();
+                timerCloseForm.Start();
             }
-            else MessageBox.Show("Please, fill the all lines in MiniCafe. Do NOT forget press Enter after each line!","Empty lines in MiniCafe", MessageBoxButtons.OK, icon: MessageBoxIcon.Error); 
+            else MessageBox.Show("Please, fill the all lines in MiniCafe. Do NOT forget press Enter after each line!", "Empty lines in MiniCafe", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
         }
 
         private void buyLitres_KeyPress(object sender, KeyPressEventArgs e)
@@ -352,23 +354,48 @@ namespace PetrolStation
 
         private void hotDogCheck_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if(e.KeyChar == 13) hotDogCheck.Checked = true; 
+            if (e.KeyChar == 13) hotDogCheck.Checked = true;
         }
 
         private void hamburgerCheck_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if(e.KeyChar == 13) hamburgerCheck.Checked = true; 
+            if (e.KeyChar == 13) hamburgerCheck.Checked = true;
         }
 
         private void potatoCheck_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if(e.KeyChar == 13) potatoCheck.Checked = true; 
+            if (e.KeyChar == 13) potatoCheck.Checked = true;
         }
 
         private void colaCheck_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if(e.KeyChar == 13) colaCheck.Checked = true; 
+            if (e.KeyChar == 13) colaCheck.Checked = true;
         }
+        private void timerCloseForm_Tick(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Is this order done?", "End of session", MessageBoxButtons.YesNo, icon: MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                timerCloseForm.Stop();
+                _totalPerChange = Convert.ToDouble(totalSum.Text);
+                DataForm._total += _totalPerChange; 
+                this.Hide();
+                var form1 = new FuelStationForm();
+                form1.Closed += (s, args) => this.Close();
+                form1.Show();
+            }
+        }
+
+        private void closeCharge_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show($"Total sum per charge is {DataForm._total}. Good buy!", "THE CHARGE IS OVER", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            if (res == DialogResult.OK) this.Close();
+            DataForm._total = 0;
+        }
+    }
+    public class DataForm
+    {
+        public static double _total { get; set; } = 0; 
     }
 }
 

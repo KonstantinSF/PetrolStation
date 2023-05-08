@@ -45,7 +45,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.SumForPetrol = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.hotDogNum = new System.Windows.Forms.TextBox();
             this.hamburgerNum = new System.Windows.Forms.TextBox();
             this.potatoNum = new System.Windows.Forms.TextBox();
@@ -65,9 +64,14 @@
             this.hamburgerPrice = new System.Windows.Forms.TextBox();
             this.hotDogPrice = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.countButton = new System.Windows.Forms.Button();
-            this.totalSum = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.totalPerCharge = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.totalSum = new System.Windows.Forms.TextBox();
+            this.countButton = new System.Windows.Forms.Button();
+            this.timerCloseForm = new System.Windows.Forms.Timer(this.components);
+            this.closeCharge = new System.Windows.Forms.Button();
             this.PetrolGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.cafeGroupBox.SuspendLayout();
@@ -118,7 +122,6 @@
             this.buyMoney.Name = "buyMoney";
             this.buyMoney.Size = new System.Drawing.Size(115, 30);
             this.buyMoney.TabIndex = 11;
-            this.toolTip1.SetToolTip(this.buyMoney, "Input sum of money from customer");
             this.buyMoney.TextChanged += new System.EventHandler(this.buyMoney_TextChanged);
             this.buyMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyMoney_KeyPress);
             // 
@@ -141,7 +144,6 @@
             this.buyLitres.Name = "buyLitres";
             this.buyLitres.Size = new System.Drawing.Size(115, 30);
             this.buyLitres.TabIndex = 9;
-            this.toolTip1.SetToolTip(this.buyLitres, "Input ordered litres");
             this.buyLitres.TextChanged += new System.EventHandler(this.buyLitres_TextChanged);
             this.buyLitres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyLitres_KeyPress);
             // 
@@ -167,7 +169,6 @@
             this.ByMoney.TabIndex = 7;
             this.ByMoney.TabStop = true;
             this.ByMoney.Text = "Money";
-            this.toolTip1.SetToolTip(this.ByMoney, "Choose if the client pay definetly sum");
             this.ByMoney.UseVisualStyleBackColor = true;
             this.ByMoney.CheckedChanged += new System.EventHandler(this.ByMoney_CheckedChanged);
             // 
@@ -182,7 +183,6 @@
             this.ByLitres.TabIndex = 6;
             this.ByLitres.TabStop = true;
             this.ByLitres.Text = "Litres";
-            this.toolTip1.SetToolTip(this.ByLitres, "Choose if client pay for litres");
             this.ByLitres.UseVisualStyleBackColor = true;
             this.ByLitres.CheckedChanged += new System.EventHandler(this.ByLitres_CheckedChanged);
             // 
@@ -284,7 +284,6 @@
             this.hotDogNum.Name = "hotDogNum";
             this.hotDogNum.Size = new System.Drawing.Size(100, 26);
             this.hotDogNum.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.hotDogNum, "Press Enter after input*No more then 5 in one hand");
             this.hotDogNum.TextChanged += new System.EventHandler(this.hotDogNum_TextChanged);
             this.hotDogNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotDogNum_KeyPress);
             this.hotDogNum.Leave += new System.EventHandler(this.hotDogNum_Leave);
@@ -297,7 +296,6 @@
             this.hamburgerNum.Name = "hamburgerNum";
             this.hamburgerNum.Size = new System.Drawing.Size(100, 26);
             this.hamburgerNum.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.hamburgerNum, "Press Enter after input*No more then 5 in one hand");
             this.hamburgerNum.TextChanged += new System.EventHandler(this.hamburgerNum_TextChanged);
             this.hamburgerNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hamburgerNum_KeyPress);
             this.hamburgerNum.Leave += new System.EventHandler(this.hamburgerNum_Leave);
@@ -310,7 +308,6 @@
             this.potatoNum.Name = "potatoNum";
             this.potatoNum.Size = new System.Drawing.Size(100, 26);
             this.potatoNum.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.potatoNum, "Press Enter after input*No more then 5 in one hand");
             this.potatoNum.TextChanged += new System.EventHandler(this.potatoNum_TextChanged);
             this.potatoNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.potatoNum_KeyPress);
             this.potatoNum.Leave += new System.EventHandler(this.potatoNum_Leave);
@@ -323,7 +320,6 @@
             this.colaNum.Name = "colaNum";
             this.colaNum.Size = new System.Drawing.Size(100, 26);
             this.colaNum.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.colaNum, "Press Enter after input*No more then 5 in one hand");
             this.colaNum.TextChanged += new System.EventHandler(this.colaNum_TextChanged);
             this.colaNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colaNum_KeyPress);
             this.colaNum.Leave += new System.EventHandler(this.colaNum_Leave);
@@ -337,7 +333,6 @@
             this.colaCheck.Size = new System.Drawing.Size(101, 21);
             this.colaCheck.TabIndex = 24;
             this.colaCheck.Text = "Coca-Cola";
-            this.toolTip1.SetToolTip(this.colaCheck, "Click twice to clear the quantity");
             this.colaCheck.UseVisualStyleBackColor = true;
             this.colaCheck.CheckedChanged += new System.EventHandler(this.colaCheck_CheckedChanged);
             this.colaCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colaCheck_KeyPress);
@@ -351,7 +346,6 @@
             this.potatoCheck.Size = new System.Drawing.Size(124, 21);
             this.potatoCheck.TabIndex = 21;
             this.potatoCheck.Text = "Potato (fried)";
-            this.toolTip1.SetToolTip(this.potatoCheck, "Click twice to clear the quantity");
             this.potatoCheck.UseVisualStyleBackColor = true;
             this.potatoCheck.CheckedChanged += new System.EventHandler(this.potatoCheck_CheckedChanged);
             this.potatoCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.potatoCheck_KeyPress);
@@ -365,7 +359,6 @@
             this.hamburgerCheck.Size = new System.Drawing.Size(107, 21);
             this.hamburgerCheck.TabIndex = 18;
             this.hamburgerCheck.Text = "Hamburger";
-            this.toolTip1.SetToolTip(this.hamburgerCheck, "Click twice to clear the quantity");
             this.hamburgerCheck.UseVisualStyleBackColor = true;
             this.hamburgerCheck.CheckedChanged += new System.EventHandler(this.hamburgerCheck_CheckedChanged);
             this.hamburgerCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hamburgerCheck_KeyPress);
@@ -379,7 +372,6 @@
             this.hotDogCheck.Size = new System.Drawing.Size(86, 21);
             this.hotDogCheck.TabIndex = 15;
             this.hotDogCheck.Text = "Hot Dog";
-            this.toolTip1.SetToolTip(this.hotDogCheck, "Click twice to clear the quantity");
             this.hotDogCheck.UseVisualStyleBackColor = true;
             this.hotDogCheck.CheckedChanged += new System.EventHandler(this.hotDogCheck_CheckedChanged);
             this.hotDogCheck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.hotDogCheck_KeyPress);
@@ -516,6 +508,10 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.closeCharge);
+            this.groupBox5.Controls.Add(this.label12);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.totalPerCharge);
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.totalSum);
             this.groupBox5.Controls.Add(this.countButton);
@@ -527,18 +523,51 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Total amount";
             // 
-            // countButton
+            // label12
             // 
-            this.countButton.BackColor = System.Drawing.Color.Firebrick;
-            this.countButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.countButton.Location = new System.Drawing.Point(53, 26);
-            this.countButton.Name = "countButton";
-            this.countButton.Size = new System.Drawing.Size(290, 85);
-            this.countButton.TabIndex = 0;
-            this.countButton.Text = "COUNT";
-            this.countButton.UseVisualStyleBackColor = false;
-            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(560, 27);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(117, 17);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Total per charge:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(690, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 15);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Rub";
+            // 
+            // totalPerCharge
+            // 
+            this.totalPerCharge.BackColor = System.Drawing.SystemColors.Control;
+            this.totalPerCharge.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.totalPerCharge.Enabled = false;
+            this.totalPerCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalPerCharge.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.totalPerCharge.Location = new System.Drawing.Point(563, 59);
+            this.totalPerCharge.Name = "totalPerCharge";
+            this.totalPerCharge.Size = new System.Drawing.Size(121, 19);
+            this.totalPerCharge.TabIndex = 15;
+            this.totalPerCharge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(486, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 18);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Rub";
             // 
             // totalSum
             // 
@@ -547,22 +576,41 @@
             this.totalSum.Enabled = false;
             this.totalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalSum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.totalSum.Location = new System.Drawing.Point(423, 52);
+            this.totalSum.Location = new System.Drawing.Point(311, 48);
             this.totalSum.Name = "totalSum";
             this.totalSum.Size = new System.Drawing.Size(169, 46);
             this.totalSum.TabIndex = 14;
             this.totalSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label10
+            // countButton
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(598, 59);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 18);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Rub";
+            this.countButton.BackColor = System.Drawing.Color.Firebrick;
+            this.countButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.countButton.Location = new System.Drawing.Point(15, 25);
+            this.countButton.Name = "countButton";
+            this.countButton.Size = new System.Drawing.Size(290, 85);
+            this.countButton.TabIndex = 0;
+            this.countButton.Text = "COUNT";
+            this.countButton.UseVisualStyleBackColor = false;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            // 
+            // timerCloseForm
+            // 
+            this.timerCloseForm.Interval = 10000;
+            this.timerCloseForm.Tick += new System.EventHandler(this.timerCloseForm_Tick);
+            // 
+            // closeCharge
+            // 
+            this.closeCharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeCharge.ForeColor = System.Drawing.Color.Green;
+            this.closeCharge.Location = new System.Drawing.Point(489, 86);
+            this.closeCharge.Name = "closeCharge";
+            this.closeCharge.Size = new System.Drawing.Size(231, 23);
+            this.closeCharge.TabIndex = 18;
+            this.closeCharge.Text = "close the charge";
+            this.closeCharge.UseVisualStyleBackColor = true;
+            this.closeCharge.Click += new System.EventHandler(this.closeCharge_Click);
             // 
             // FuelStationForm
             // 
@@ -606,7 +654,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox SumForPetrol;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox cafeGroupBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label7;
@@ -629,6 +676,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox totalSum;
         private System.Windows.Forms.Button countButton;
+        private System.Windows.Forms.Timer timerCloseForm;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox totalPerCharge;
+        private System.Windows.Forms.Button closeCharge;
     }
 }
 
