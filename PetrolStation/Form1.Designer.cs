@@ -50,6 +50,10 @@
             this.hamburgerNum = new System.Windows.Forms.TextBox();
             this.potatoNum = new System.Windows.Forms.TextBox();
             this.colaNum = new System.Windows.Forms.TextBox();
+            this.colaCheck = new System.Windows.Forms.CheckBox();
+            this.potatoCheck = new System.Windows.Forms.CheckBox();
+            this.hamburgerCheck = new System.Windows.Forms.CheckBox();
+            this.hotDogCheck = new System.Windows.Forms.CheckBox();
             this.cafeGroupBox = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,13 +61,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.colaPrice = new System.Windows.Forms.TextBox();
-            this.colaCheck = new System.Windows.Forms.CheckBox();
             this.potatoPrice = new System.Windows.Forms.TextBox();
-            this.potatoCheck = new System.Windows.Forms.CheckBox();
             this.hamburgerPrice = new System.Windows.Forms.TextBox();
-            this.hamburgerCheck = new System.Windows.Forms.CheckBox();
             this.hotDogPrice = new System.Windows.Forms.TextBox();
-            this.hotDogCheck = new System.Windows.Forms.CheckBox();
             this.PetrolGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.cafeGroupBox.SuspendLayout();
@@ -321,6 +321,58 @@
             this.colaNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.colaNum_KeyPress);
             this.colaNum.Leave += new System.EventHandler(this.colaNum_Leave);
             // 
+            // colaCheck
+            // 
+            this.colaCheck.AutoSize = true;
+            this.colaCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.colaCheck.Location = new System.Drawing.Point(23, 211);
+            this.colaCheck.Name = "colaCheck";
+            this.colaCheck.Size = new System.Drawing.Size(101, 21);
+            this.colaCheck.TabIndex = 24;
+            this.colaCheck.Text = "Coca-Cola";
+            this.toolTip1.SetToolTip(this.colaCheck, "Click twice to clear the quantity");
+            this.colaCheck.UseVisualStyleBackColor = true;
+            this.colaCheck.CheckedChanged += new System.EventHandler(this.colaCheck_CheckedChanged);
+            // 
+            // potatoCheck
+            // 
+            this.potatoCheck.AutoSize = true;
+            this.potatoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.potatoCheck.Location = new System.Drawing.Point(23, 163);
+            this.potatoCheck.Name = "potatoCheck";
+            this.potatoCheck.Size = new System.Drawing.Size(124, 21);
+            this.potatoCheck.TabIndex = 21;
+            this.potatoCheck.Text = "Potato (fried)";
+            this.toolTip1.SetToolTip(this.potatoCheck, "Click twice to clear the quantity");
+            this.potatoCheck.UseVisualStyleBackColor = true;
+            this.potatoCheck.CheckedChanged += new System.EventHandler(this.potatoCheck_CheckedChanged);
+            // 
+            // hamburgerCheck
+            // 
+            this.hamburgerCheck.AutoSize = true;
+            this.hamburgerCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hamburgerCheck.Location = new System.Drawing.Point(23, 111);
+            this.hamburgerCheck.Name = "hamburgerCheck";
+            this.hamburgerCheck.Size = new System.Drawing.Size(107, 21);
+            this.hamburgerCheck.TabIndex = 18;
+            this.hamburgerCheck.Text = "Hamburger";
+            this.toolTip1.SetToolTip(this.hamburgerCheck, "Click twice to clear the quantity");
+            this.hamburgerCheck.UseVisualStyleBackColor = true;
+            this.hamburgerCheck.CheckedChanged += new System.EventHandler(this.hamburgerCheck_CheckedChanged);
+            // 
+            // hotDogCheck
+            // 
+            this.hotDogCheck.AutoSize = true;
+            this.hotDogCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.hotDogCheck.Location = new System.Drawing.Point(23, 60);
+            this.hotDogCheck.Name = "hotDogCheck";
+            this.hotDogCheck.Size = new System.Drawing.Size(86, 21);
+            this.hotDogCheck.TabIndex = 15;
+            this.hotDogCheck.Text = "Hot Dog";
+            this.toolTip1.SetToolTip(this.hotDogCheck, "Click twice to clear the quantity");
+            this.hotDogCheck.UseVisualStyleBackColor = true;
+            this.hotDogCheck.CheckedChanged += new System.EventHandler(this.hotDogCheck_CheckedChanged);
+            // 
             // cafeGroupBox
             // 
             this.cafeGroupBox.Controls.Add(this.groupBox3);
@@ -413,20 +465,7 @@
             this.colaPrice.Size = new System.Drawing.Size(100, 26);
             this.colaPrice.TabIndex = 25;
             this.colaPrice.TabStop = false;
-            this.colaPrice.Text = "150";
-            // 
-            // colaCheck
-            // 
-            this.colaCheck.AutoSize = true;
-            this.colaCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.colaCheck.Location = new System.Drawing.Point(23, 211);
-            this.colaCheck.Name = "colaCheck";
-            this.colaCheck.Size = new System.Drawing.Size(101, 21);
-            this.colaCheck.TabIndex = 24;
-            this.colaCheck.Text = "Coca-Cola";
-            this.toolTip1.SetToolTip(this.colaCheck, "Click twice to clear the quantity");
-            this.colaCheck.UseVisualStyleBackColor = true;
-            this.colaCheck.CheckedChanged += new System.EventHandler(this.colaCheck_CheckedChanged);
+            this.colaPrice.Text = "10";
             // 
             // potatoPrice
             // 
@@ -438,20 +477,7 @@
             this.potatoPrice.Size = new System.Drawing.Size(100, 26);
             this.potatoPrice.TabIndex = 22;
             this.potatoPrice.TabStop = false;
-            this.potatoPrice.Text = "160";
-            // 
-            // potatoCheck
-            // 
-            this.potatoCheck.AutoSize = true;
-            this.potatoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.potatoCheck.Location = new System.Drawing.Point(23, 163);
-            this.potatoCheck.Name = "potatoCheck";
-            this.potatoCheck.Size = new System.Drawing.Size(124, 21);
-            this.potatoCheck.TabIndex = 21;
-            this.potatoCheck.Text = "Potato (fried)";
-            this.toolTip1.SetToolTip(this.potatoCheck, "Click twice to clear the quantity");
-            this.potatoCheck.UseVisualStyleBackColor = true;
-            this.potatoCheck.CheckedChanged += new System.EventHandler(this.potatoCheck_CheckedChanged);
+            this.potatoPrice.Text = "50";
             // 
             // hamburgerPrice
             // 
@@ -463,20 +489,7 @@
             this.hamburgerPrice.Size = new System.Drawing.Size(100, 26);
             this.hamburgerPrice.TabIndex = 19;
             this.hamburgerPrice.TabStop = false;
-            this.hamburgerPrice.Text = "200";
-            // 
-            // hamburgerCheck
-            // 
-            this.hamburgerCheck.AutoSize = true;
-            this.hamburgerCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hamburgerCheck.Location = new System.Drawing.Point(23, 111);
-            this.hamburgerCheck.Name = "hamburgerCheck";
-            this.hamburgerCheck.Size = new System.Drawing.Size(107, 21);
-            this.hamburgerCheck.TabIndex = 18;
-            this.hamburgerCheck.Text = "Hamburger";
-            this.toolTip1.SetToolTip(this.hamburgerCheck, "Click twice to clear the quantity");
-            this.hamburgerCheck.UseVisualStyleBackColor = true;
-            this.hamburgerCheck.CheckedChanged += new System.EventHandler(this.hamburgerCheck_CheckedChanged);
+            this.hamburgerPrice.Text = "100";
             // 
             // hotDogPrice
             // 
@@ -488,20 +501,7 @@
             this.hotDogPrice.Size = new System.Drawing.Size(100, 26);
             this.hotDogPrice.TabIndex = 16;
             this.hotDogPrice.TabStop = false;
-            this.hotDogPrice.Text = "250";
-            // 
-            // hotDogCheck
-            // 
-            this.hotDogCheck.AutoSize = true;
-            this.hotDogCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hotDogCheck.Location = new System.Drawing.Point(23, 60);
-            this.hotDogCheck.Name = "hotDogCheck";
-            this.hotDogCheck.Size = new System.Drawing.Size(86, 21);
-            this.hotDogCheck.TabIndex = 15;
-            this.hotDogCheck.Text = "Hot Dog";
-            this.toolTip1.SetToolTip(this.hotDogCheck, "Click twice to clear the quantity");
-            this.hotDogCheck.UseVisualStyleBackColor = true;
-            this.hotDogCheck.CheckedChanged += new System.EventHandler(this.hotDogCheck_CheckedChanged);
+            this.hotDogPrice.Text = "200";
             // 
             // FuelStationForm
             // 
