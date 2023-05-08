@@ -64,10 +64,15 @@
             this.potatoPrice = new System.Windows.Forms.TextBox();
             this.hamburgerPrice = new System.Windows.Forms.TextBox();
             this.hotDogPrice = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.countButton = new System.Windows.Forms.Button();
+            this.totalSum = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.PetrolGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.cafeGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // PetrolGroupBox
@@ -115,6 +120,7 @@
             this.buyMoney.TabIndex = 11;
             this.toolTip1.SetToolTip(this.buyMoney, "Input sum of money from customer");
             this.buyMoney.TextChanged += new System.EventHandler(this.buyMoney_TextChanged);
+            this.buyMoney.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyMoney_KeyPress);
             // 
             // label4
             // 
@@ -137,6 +143,7 @@
             this.buyLitres.TabIndex = 9;
             this.toolTip1.SetToolTip(this.buyLitres, "Input ordered litres");
             this.buyLitres.TextChanged += new System.EventHandler(this.buyLitres_TextChanged);
+            this.buyLitres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buyLitres_KeyPress);
             // 
             // label3
             // 
@@ -503,11 +510,62 @@
             this.hotDogPrice.TabStop = false;
             this.hotDogPrice.Text = "200";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label10);
+            this.groupBox5.Controls.Add(this.totalSum);
+            this.groupBox5.Controls.Add(this.countButton);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox5.Location = new System.Drawing.Point(13, 456);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(746, 130);
+            this.groupBox5.TabIndex = 15;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Total amount";
+            // 
+            // countButton
+            // 
+            this.countButton.BackColor = System.Drawing.Color.Firebrick;
+            this.countButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.countButton.Location = new System.Drawing.Point(53, 26);
+            this.countButton.Name = "countButton";
+            this.countButton.Size = new System.Drawing.Size(290, 85);
+            this.countButton.TabIndex = 0;
+            this.countButton.Text = "COUNT";
+            this.countButton.UseVisualStyleBackColor = false;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            // 
+            // totalSum
+            // 
+            this.totalSum.BackColor = System.Drawing.SystemColors.Control;
+            this.totalSum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.totalSum.Enabled = false;
+            this.totalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalSum.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.totalSum.Location = new System.Drawing.Point(423, 52);
+            this.totalSum.Name = "totalSum";
+            this.totalSum.Size = new System.Drawing.Size(169, 46);
+            this.totalSum.TabIndex = 14;
+            this.totalSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(598, 59);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 18);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Rub";
+            // 
             // FuelStationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 607);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PetrolGroupBox);
             this.Controls.Add(this.cafeGroupBox);
@@ -522,6 +580,8 @@
             this.cafeGroupBox.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -561,6 +621,10 @@
         private System.Windows.Forms.CheckBox hotDogCheck;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox totalSum;
+        private System.Windows.Forms.Button countButton;
     }
 }
 

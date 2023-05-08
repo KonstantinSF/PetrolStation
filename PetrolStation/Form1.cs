@@ -53,7 +53,7 @@ namespace PetrolStation
         {
             buyLitres.Enabled = true;
             buyLitres.Clear();
-            SumForPetrol.Clear();
+            SumForPetrol.Text="0";
             buyMoney.Enabled = false;
         }
 
@@ -61,7 +61,7 @@ namespace PetrolStation
         {
             buyMoney.Enabled = true;
             buyMoney.Clear();
-            SumForPetrol.Clear();
+            SumForPetrol.Text="0";
             buyLitres.Enabled = false;
         }
 
@@ -80,7 +80,7 @@ namespace PetrolStation
                     _litres = 0;
                 }
             }
-            else SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
+            SumForPetrol.Text = Convert.ToString(_litres * Convert.ToDouble(PriceTypeOfPetrol.Text));
         }
         private void buyMoney_TextChanged(object sender, EventArgs e)
         {
@@ -245,6 +245,7 @@ namespace PetrolStation
                     colaNum.Enabled = false;
                 }
                 SumCafe.Text = _sumCafe.ToString();
+                countButton.Focus();
             }
         }
 
@@ -262,6 +263,7 @@ namespace PetrolStation
                     potatoNum.Enabled = false;
                 }
                 SumCafe.Text = _sumCafe.ToString();
+                countButton.Focus();
             }
         }
 
@@ -280,6 +282,7 @@ namespace PetrolStation
                     hamburgerNum.Enabled = false;
                 }
                 SumCafe.Text = _sumCafe.ToString();
+                countButton.Focus();
             }
         }
         private void hotDogNum_Leave(object sender, EventArgs e) => _countEnter = true;
@@ -296,6 +299,30 @@ namespace PetrolStation
                     hotDogNum.Enabled = false;
                 }
                 SumCafe.Text = _sumCafe.ToString();
+                countButton.Focus(); 
+            }
+        }
+
+        private void countButton_Click(object sender, EventArgs e)
+        {
+            totalSum.Text = (Convert.ToDouble(SumForPetrol.Text)+Convert.ToDouble(SumCafe.Text)).ToString();
+        }
+
+        private void buyLitres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buyLitres.Enabled = false;
+                countButton.Focus();
+            }
+        }
+
+        private void buyMoney_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                buyMoney.Enabled = false;
+                countButton.Focus();
             }
         }
     }
